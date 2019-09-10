@@ -5,8 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Courgette">
-
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Great+Vibes">
         <script src="lib/angular.min.js"></script>
         <script src="lib/angular-resource.min.js"></script>
@@ -239,9 +239,15 @@ controllers.controller('addGuest', function($scope,$resource){
             {
              console.log("Saved");
              document.getElementById('id01').style.display='none';
+//           alert("Your Response has been recorded");
+             swal.fire("Your Response has been recorded!", "Thank You!", "success");
              }
             else
+            {
             console.log("Error");
+//          alert("Some System error occured. Please Try again.");
+            swal.fire("Some System error occured!", "Please Try again!", "error");
+            }
             });
             
     
