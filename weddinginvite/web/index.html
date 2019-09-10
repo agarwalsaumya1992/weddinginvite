@@ -54,6 +54,26 @@ body, html {height: 100%;line-height: 1.2;}
 .mySlides {display:none}
 .w3-left, .w3-right, .w3-badge {cursor:pointer}
 .w3-badge {height:13px;width:13px;padding:0}
+
+.effect {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+
 </style>
 <body  >
 
@@ -84,15 +104,15 @@ body, html {height: 100%;line-height: 1.2;}
     <!--<img class="w3-round " src="images/couple.jpg" style="width:100%;margin:32px 0">-->
     
     <div class="w3-content w3-display-container" style="max-width:500px">
-  <img class="mySlides" src="images/couple6.jpg" style="width:100%">
-  <img class="mySlides" src="images/couple3.jpg" style="width:100%">
-  <img class="mySlides" src="images/couple7.jpg" style="width:100%">
-  <img class="mySlides" src="images/couple1.jpg" style="width:100%">
-  <img class="mySlides" src="images/couple5.jpg" style="width:100%">
-  <img class="mySlides" src="images/couple4.jpg" style="width:100%">
-  <img class="mySlides" src="images/couple2.jpg" style="width:100%">
-  <img class="mySlides" src="images/couple8.jpg" style="width:100%">
-  <img class="mySlides" src="images/couple9.jpg" style="width:100%">
+  <img class="mySlides effect" src="images/couple6.jpg" style="width:100%">
+  <img class="mySlides effect" src="images/couple3.jpg" style="width:100%">
+  <img class="mySlides effect" src="images/couple7.jpg" style="width:100%">
+  <img class="mySlides effect" src="images/couple1.jpg" style="width:100%">
+  <img class="mySlides effect" src="images/couple5.jpg" style="width:100%">
+  <img class="mySlides effect" src="images/couple4.jpg" style="width:100%">
+  <img class="mySlides effect" src="images/couple2.jpg" style="width:100%">
+  <img class="mySlides effect" src="images/couple8.jpg" style="width:100%">
+  <img class="mySlides effect" src="images/couple9.jpg" style="width:100%">
   <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
     <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
     <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
@@ -165,9 +185,9 @@ Together with their families Request the honour of your presence in their celebr
 
 <!-- RSVP modal -->
 <div ng-app="app" ng-controller="addGuest" id="id01" class="w3-modal">
-  <div class="w3-modal-content w3-card-4 w3-animate-zoom bgimg4" style="padding:50px 32px;max-width:600px">
+  <div class="w3-modal-content w3-card-4 w3-animate-zoom bgimg4" style="padding:60px 20px 20px;max-width:600px">
     <div class="w3-container w3-white w3-center" style="background-color:#fff0!important;">
-      <h1 class="w3-wide">CAN YOU COME?</h1>
+      <h1 class="w3-wide">Can You Come?</h1>
        <span onclick="document.getElementById('id01').style.display='none'" class="close">&times;</span>
       <p>We really hope you can make it.</p>
       <form name="myForm" >
@@ -233,8 +253,29 @@ controllers.controller('addGuest', function($scope,$resource){
        
        
        
-var slideIndex = 1;
-showDivs(slideIndex);
+var slideIndex = 0;
+
+
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-white";
+  setTimeout(showSlides, 4000); // Change image every 2 seconds
+}
+
+//showDivs(slideIndex);
 
 function plusDivs(n) {
   showDivs(slideIndex += n);
@@ -259,6 +300,7 @@ function showDivs(n) {
   x[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " w3-white";
 }
+
     </script>
 </body>
 </html>
