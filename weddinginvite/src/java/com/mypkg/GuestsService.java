@@ -16,15 +16,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 
 @Path("guests")
 public class GuestsService {
     
-//    static String connectionURL="jdbc:mysql://node78875-saumyamonarch.whelastic.net/wedding" ;
-//    static String dbuname="root";
-//    static String dbpass="GQFkvn96368";
+
     
     static String connectionURL="jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12304603" ;
     static String dbuname="sql12304603";
@@ -32,6 +32,54 @@ public class GuestsService {
     
    static String driverClass="com.mysql.jdbc.Driver";
    
+    @GET  
+    
+  @Produces("text/html")
+         public Response getAllGuests() throws SQLException 
+    {
+       String responsedata="";
+       Connection con=null;
+        try {
+            Class.forName(driverClass);
+        
+           
+           con = DriverManager.getConnection(connectionURL,dbuname,dbpass);
+          Statement stat=con.createStatement();
+           
+           String query="SELECT * from T_GUESTLIST";
+           ResultSet results = stat.executeQuery(query);
+               
+           while (results.next()) {
+               String templine=results.getInt("ID")
+                       +" , "+results.getString("NAME")
+                       +" , "+results.getString("COUNT")
+                       +" , "+results.getString("RESPONSE")
+                       +" , "+results.getString("TIMESTAMP")+"<br>\n";
+                    
+               responsedata=responsedata+templine;
+             }
+            }
+         catch (SQLException e) {
+               
+               responsedata= e.toString();
+           }
+        catch (ClassNotFoundException e) {
+            
+            responsedata= e.toString();
+        }    
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+            responsedata= e.toString();
+            
+        }
+         finally
+         {
+             con.close();
+         }
+        return Response.status(200).entity(responsedata).build();
+    } 
+
    
     @POST
      
