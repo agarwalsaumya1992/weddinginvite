@@ -18,34 +18,36 @@
 body{font-family: "Courgette", sans-serif;}
 h1,h2{font-family: "Great Vibes", sans-serif;
 }
-.gap {
-    padding: 15px;
-}
+
 body, html {height: 100%;line-height: 1.2;}
 p{
     margin-top: 10px;
 }
-.bgimg   {
-  min-height:100%;
-  background-position-x: center;
-    background-position-y: center;
-  background-size: cover;
-  
-}
-
-
- .bgimg1, .bgimg3 , .bgimg2 {
+ .bgimg , .bgimg1 , .bgimg2, .bgimg3 {
    min-height:100%;
   background-position-x: center;
     background-position-y: center;
   
 }
-.bgimg {background-image: url("images/cover1.jpg")}
-.bgimg1 {background-image: url("images/redbg.jpg");}
+.bgimg {background-image: url("images/cover1.jpg"); background-size: cover;}
+.bgimg1 {background-image: url("images/redbg.jpg"); background-size: contain;}
 .bgimg2 {background-image: url("images/cherrybg.jpg");}
-.bgimg3 {background-image: url("images/rsvp.jpg");}
+.bgimg3 {background-image: url("images/rsvp.jpg"); background-size: cover;}
 .bgimg4 {background-image: url("images/rsvp2.jpg"); background-size: cover;}
 
+.bgimg5 {
+    padding: 15px;
+    background-image: url("images/frame2.png"); background-size: cover;
+}
+
+.bgimg6 {
+       padding: 20px;
+    padding-top: 70px;
+    background-image: url(images/frame2.png);
+    background-size: contain;
+        background-position-x: center;
+    margin-top: -80px;
+}
 .shehnai{
     width: 100px;
     position: absolute;
@@ -53,6 +55,8 @@ p{
 }
 
 .w3-text-white-shadow{background-color: #00000060;}
+
+.w3-text-white-shadow-dark{background-color: #47000099;}
 
 .close{
   position: absolute;
@@ -164,11 +168,11 @@ Together with their families Request the honour of your presence in their celebr
 <div class="w3-container w3-padding-32 w3-text-white  w3-center bgimg1" id="wedding">
  
     
-    <div class="w3-text-white-shadow">
-         <img class="shehnai" src="images/shehnai.png" >
-   <h1 class="w3-text-white-shadow gap" data-toggle="collapse" data-target="#function1" >  <b>The Wedding</b> </h1>
+    <div class="w3-text-white-shadow-dark">
+         
+   <h1 class="bgimg5 " data-toggle="collapse" data-target="#function1" >  <b>The Wedding</b> </h1>
   <div id="function1" class="collapse in ">
-    <div class="w3-content">
+    <div class="w3-content bgimg6">
    
     <img class="w3-round-large" src="images/location.jpg" style="width: 100%;margin:32px 0">
     <div class="w3-row">
@@ -192,11 +196,11 @@ Together with their families Request the honour of your presence in their celebr
   </div> 
     </div>
     
- <div class="w3-text-white-shadow">    
-<img class="shehnai" src="images/shehnai.png" >
-      <h1 class="w3-text-white-shadow gap" data-toggle="collapse" data-target="#function2"><b>Engagement Ceremony</b></h1>
+ <div class="w3-text-white-shadow-dark">    
+
+      <h1 class="bgimg5" data-toggle="collapse" data-target="#function2"><b>Engagement Ceremony</b></h1>
   <div id="function2" class="collapse">     
-    <div class="w3-content">
+    <div class="w3-content bgimg6">
    
     
     <div class="w3-row">
@@ -223,11 +227,11 @@ Together with their families Request the honour of your presence in their celebr
     
         </div>
     
- <div class="w3-text-white-shadow">  
-  <img class="shehnai" src="images/shehnai.png" >
-      <h1 class="w3-text-white-shadow gap" data-toggle="collapse" data-target="#function3"><b>Sangeet</b></h1>
+ <div class="w3-text-white-shadow-dark">  
+  
+      <h1 class="bgimg5" data-toggle="collapse" data-target="#function3"><b>Sangeet</b></h1>
   <div id="function3" class="collapse">     
-<div class="w3-content">
+<div class="w3-content bgimg6">
    
     
     <div class="w3-row">
