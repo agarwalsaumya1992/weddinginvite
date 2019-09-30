@@ -58,15 +58,15 @@ p{
 
 .w3-text-white-shadow-dark{background-color: #47000099;}
 
-.close{
+.close1{
   position: absolute;
     top: 0;
     right: 0;
-        margin: 0px 20px;
+        
     font-size: 40px;
-    line-height: 25px;
+    line-height: 20px;
 }
-.close:hover {background: #bbb;}
+.close1:hover {background: #bbb;}
 
 .invert {-webkit-filter: invert(100%);filter: invert(100%);}
 .btn-border{border: solid;}
@@ -132,7 +132,7 @@ p{
   <img class="mySlides effect" src="images/couple4.jpg" style="width:100%">
   <img class="mySlides effect" src="images/couple2.jpg" style="width:100%">
   <img class="mySlides effect" src="images/couple8.jpg" style="width:100%">
-  <img class="mySlides effect" src="images/couple9.jpg" style="width:100%">
+  <!--<img class="mySlides effect" src="images/couple9.jpg" style="width:100%">-->
   <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
     <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
     <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
@@ -144,11 +144,11 @@ p{
     <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(6)"></span>
     <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(7)"></span>
     <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(8)"></span>
-    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(9)"></span>
+    <!--<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(9)"></span>-->
   </div>
 </div>
     
-    <p><i>Saumya Agarwal
+    <p class="w3-center"><i>Saumya Agarwal
 Daughter of Mr. Dinesh Kumar Agarwal & Mrs. Ramna Agarwal , From Lucknow
 <br>
 and
@@ -185,8 +185,8 @@ Together with their families Request the honour of your presence in their celebr
       <div class="w3-half">
         <h2>Where</h2>
         <p>5, Ashoka Rd</p>
-        <p>Janpath, Connaught Place</p>
-        <p>New Delhi, Delhi 110001</p>
+        <p>(Near India Gate)</p>
+        <p>New Delhi, 110001</p>
       </div>
         <div class="invert">
       <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.4213674353673!2d77.22236074956204!3d28.617130782337675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2cebf46ef55%3A0x5c436cfe7bd5835b!2s5%2C%20Ashoka%20Rd%2C%20Janpath%2C%20Connaught%20Place%2C%20New%20Delhi%2C%20Delhi%20110001!5e0!3m2!1sen!2sin!4v1567857437227!5m2!1sen!2sin" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
@@ -277,7 +277,7 @@ Together with their families Request the honour of your presence in their celebr
   <div class="w3-modal-content w3-card-4 w3-animate-zoom bgimg4" style="padding:60px 20px 20px;max-width:600px">
     <div class="w3-container w3-white w3-center" style="background-color:#fff0!important;">
       <h1 class="w3-wide">Can You Come?</h1>
-       <span onclick="document.getElementById('id01').style.display='none'" class="close">&times;</span>
+       <span onclick="document.getElementById('id01').style.display='none'" class="close1">&times;</span>
       <p>We really hope you can make it.</p>
       <form name="myForm" >
         <input  ng-model="guest.guestname" class="w3-input w3-border" type="text" placeholder="Please enter your name"  id="guestname"  required>
